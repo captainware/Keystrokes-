@@ -1,0 +1,129 @@
+ui = Instance.new("ScreenGui")
+					local Frame = Instance.new("Frame")
+					local Space = Instance.new("TextLabel")
+					local A = Instance.new("TextLabel")
+					local S = Instance.new("TextLabel")
+					local D = Instance.new("TextLabel")
+					local W = Instance.new("TextLabel")
+					ui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+					ui.ResetOnSpawn = false
+					Frame.Parent = ui
+					Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					Frame.BackgroundTransparency = 1.000
+					Frame.Position = UDim2.new(0.0234093647, 0, 0.6304878, 0)
+					Frame.Size = UDim2.new(0, 219, 0, 259)
+					Space.Name = "Space"
+					Space.Parent = Frame
+					Space.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+					Space.BackgroundTransparency = 0.400
+					Space.BorderSizePixel = 0
+					Space.Position = UDim2.new(0.0410958901, 0, 0.728033423, 0)
+					Space.Size = UDim2.new(0, 200, 0, 50)
+					Space.Font = Enum.Font.SourceSans
+					Space.Text = "SPACE"
+					Space.TextColor3 = Color3.fromRGB(255, 255, 255)
+					Space.TextScaled = true
+					Space.TextSize = 14.000
+					Space.TextWrapped = true
+					A.Name = "A"
+					A.Parent = Frame
+					A.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+					A.BackgroundTransparency = 0.400
+					A.BorderSizePixel = 0
+					A.Position = UDim2.new(0.0410958901, 0, 0.49372384, 0)
+					A.Size = UDim2.new(0, 61, 0, 50)
+					A.Font = Enum.Font.SourceSans
+					A.Text = "A"
+					A.TextColor3 = Color3.fromRGB(255, 255, 255)
+					A.TextScaled = true
+					A.TextSize = 14.000
+					A.TextWrapped = true
+					S.Name = "S"
+					S.Parent = Frame
+					S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+					S.BackgroundTransparency = 0.400
+					S.BorderSizePixel = 0
+					S.Position = UDim2.new(0.360730588, 0, 0.49372384, 0)
+					S.Size = UDim2.new(0, 61, 0, 50)
+					S.Font = Enum.Font.SourceSans
+					S.Text = "S"
+					S.TextColor3 = Color3.fromRGB(255, 255, 255)
+					S.TextScaled = true
+					S.TextSize = 14.000
+					S.TextWrapped = true
+					D.Name = "D"
+					D.Parent = Frame
+					D.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+					D.BackgroundTransparency = 0.400
+					D.BorderSizePixel = 0
+					D.Position = UDim2.new(0.675799072, 0, 0.49372384, 0)
+					D.Size = UDim2.new(0, 61, 0, 50)
+					D.Font = Enum.Font.SourceSans
+					D.Text = "D"
+					D.TextColor3 = Color3.fromRGB(255, 255, 255)
+					D.TextScaled = true
+					D.TextSize = 14.000
+					D.TextWrapped = true
+					W.Name = "W"
+					W.Parent = Frame
+					W.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+					W.BackgroundTransparency = 0.400
+					W.BorderSizePixel = 0
+					W.Position = UDim2.new(0.356164366, 0, 0.242677808, 0)
+					W.Size = UDim2.new(0, 61, 0, 50)
+					W.Font = Enum.Font.SourceSans
+					W.Text = "W"
+					W.TextColor3 = Color3.fromRGB(255, 255, 255)
+					W.TextScaled = true
+					W.TextSize = 14.000
+					W.TextWrapped = true
+					keystrokes1 = game:GetService("UserInputService").InputBegan:Connect(function(key,chatting)
+						if not chatting then 
+							if key.KeyCode == Enum.KeyCode.W then
+								W.BackgroundColor3 = Color3.fromRGB(102, 0, 255)
+							end
+							if key.KeyCode == Enum.KeyCode.A then
+								A.BackgroundColor3 = Color3.fromRGB(102, 0, 255)
+							end
+							if key.KeyCode == Enum.KeyCode.S then
+								S.BackgroundColor3 = Color3.fromRGB(102, 0, 255)
+							end
+							if key.KeyCode == Enum.KeyCode.D then
+								D.BackgroundColor3 = Color3.fromRGB(102, 0, 255)
+							end
+							if key.KeyCode == Enum.KeyCode.Space then
+								Space.BackgroundColor3 = Color3.fromRGB(102, 0, 255)
+							end
+						end
+					end)
+					keystrokes2 = game:GetService("UserInputService").InputEnded:Connect(function(key,chatting)
+						if not chatting then 
+							if key.KeyCode == Enum.KeyCode.W then
+								W.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+							end
+							if key.KeyCode == Enum.KeyCode.A then
+								A.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+							end
+							if key.KeyCode == Enum.KeyCode.S then
+								S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+							end
+							if key.KeyCode == Enum.KeyCode.D then
+								D.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+							end
+							if key.KeyCode == Enum.KeyCode.Space then
+								Space.BackgroundColor3 = Color3.fromRGB(0,0,0)
+							end
+						end
+					end)
+				else
+					ui:Remove()
+					pcall(function()
+						keystrokes1:Disconnect()
+					end)
+					pcall(function()
+						keystrokes2:Disconnect()
+					end)
+				end
+			end,
+		})
+	end)
