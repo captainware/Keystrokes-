@@ -1,4 +1,4 @@
-
+ui = Instance.new("ScreenGui")
 					local Frame = Instance.new("Frame")
 					local Space = Instance.new("TextLabel")
 					local A = Instance.new("TextLabel")
